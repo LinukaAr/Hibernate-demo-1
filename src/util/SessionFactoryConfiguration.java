@@ -14,18 +14,17 @@ public class SessionFactoryConfiguration {
 
     private SessionFactoryConfiguration() {
         Configuration configuration = new Configuration().configure()
-        .addAnnotatedClass(StudentEntity.class);
+                .addAnnotatedClass(StudentEntity.class);
 
         sessionFactory = configuration.buildSessionFactory();
     }
 
     public static SessionFactoryConfiguration getInstance() {
-        return sessionFactoryConfiguration == null ? 
-                sessionFactoryConfiguration = new SessionFactoryConfiguration()
+        return sessionFactoryConfiguration == null ? sessionFactoryConfiguration = new SessionFactoryConfiguration()
                 : sessionFactoryConfiguration;
     }
 
-    public Session getSession(){
+    public Session getSession() {
         return sessionFactory.openSession();
     }
 
