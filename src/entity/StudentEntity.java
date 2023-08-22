@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-//import entity.embeded.StudentName;
+import entity.embeded.StudentName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,10 +25,10 @@ import lombok.ToString;
 @Entity
 @Table(name = "student")
 @NoArgsConstructor
-//@AllArgsConstructor
-//@Getter
-//@Setter
-//@ToString
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class StudentEntity {
 
     // ID Attrubute
@@ -42,7 +42,7 @@ public class StudentEntity {
     private String nic;
 
     //Composite Attribute
-    //private StudentName name;
+    private StudentName name;
 
     //Multi Valued Attribute
     @ElementCollection
